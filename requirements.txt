@@ -1,0 +1,15 @@
+flask
+line-bot-sdk==1.18.0
+Pillow
+pyimgur
+requests
+Gunicorn
+beautifulsoup4
+lxml
+psycopg2
+pandas
+google-cloud-vision
+opencv-python
+opencc-python-reimplemented
+googlesearch-python
+openai
