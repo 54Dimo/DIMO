@@ -172,8 +172,8 @@ def download_images_with_beautifulsoup(round, img_keyword):
     return img_content
 
 def upload_image_to_github(image_content, keyword, github_token):
-    github_username = 'wuchanye'
-    github_repo = 'test'
+    github_username = '54Dimo'
+    github_repo = 'DIMO'
     github_folder = 'imgs4food'
     filename = keyword + '.jpg'
     img_message = None
