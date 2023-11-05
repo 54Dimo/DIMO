@@ -38,14 +38,14 @@ def excerciseAndmeal(user_msg,user_id):
         metaPrompt=f''' 我是一位{user_info.get('gender')}、身高:{user_info.get('height')}公分、體重:{user_info.get('weight')}公斤
         平時從事{user_info.get('exerciseIntensity')}運動，想要達成{user_info.get('fitnessGoal')}的體態目標。
         今天還沒有吃過任何東西。
-        請根據針對以上個人資訊，並根據下列問題回答至多三項有關於運動或健康飲食的相關建議'''
+        請根據針對以上個人資訊，並根據下列問題回答至多三項相關建議'''
     else:
         for i in range(len(mealList)):
             food_had_eat.append(mealList[i][4])
         metaPrompt=f''' 我是一位{user_info.get('gender')}、身高:{user_info.get('height')}公分、體重:{user_info.get('weight')}公斤
         平時從事{user_info.get('exerciseIntensity')}運動，想要達成{user_info.get('fitnessGoal')}的體態目標。
         今天已經吃了{food_had_eat}這些東西。
-        請根據上述提供的資訊，並根據下列問題回答至多三項有關於運動或健康飲食的相關建議'''
+        請根據上述提供的資訊，並根據下列問題回答至多三項相關建議'''
     return metaPrompt
 def food_info(food_name):
     metaPrompt='''
