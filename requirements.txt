@@ -13,4 +13,3 @@ opencv-python
 opencc-python-reimplemented
 googlesearch-python
 openai
-gevent
