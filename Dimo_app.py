@@ -264,6 +264,10 @@ def handle_postback(event):
                 alert(event,user_id)
             elif value=='selfInfo':
                 viewOrUpdateUserInfo(event,user_id)
+	    elif value=='QA':
+                Rmenu.askingStandardQuestion(event, user_id, line_bot_api)
+            elif value=='contect':
+                Rmenu.contect2Us(event, user_id, line_bot_api)
         elif action=='viewRecord':
             if value=='today':
                 view_today_record(event,user_id)
@@ -731,13 +735,10 @@ def delete_data_call(event,value,user_id):
 def chooseDate(event,user_id):
     # 獲取今天的日期
     today = datetime.now()
-    
-    
+        
     # 計算一個月前和一個月後的日期
     one_month_ago = today - timedelta(days=30)
     one_month_ago = one_month_ago.strftime('%Y-%m-%d')
-    one_month_later = today + timedelta(days=30)
-    one_month_later = one_month_later.strftime('%Y-%m-%d')
     today=today.strftime('%Y-%m-%d')
     
     message = TemplateSendMessage(
@@ -751,7 +752,7 @@ def chooseDate(event,user_id):
                       "data": "choosed_date",
                       "mode": "date",
                       "initial": today,
-                      "max": one_month_later,
+                      "max": today,
                       "min": one_month_ago
                       }
                 ]
