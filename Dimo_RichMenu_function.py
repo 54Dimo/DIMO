@@ -41,40 +41,94 @@ def SearchFunction(event,user_id,line_bot_api,liffid_food):
     line_bot_api.reply_message(event.reply_token, message)       
 
 def askingStandardQuestion(event,user_id,line_bot_api):
-    message = TemplateSendMessage(
+    message = FlexSendMessage(
            alt_text='問題類別選單',
-           template=ButtonsTemplate(
-               title='問題類別列表',  #主標題
-               text='請選擇要問的問題類別',  #副標題
-               actions=[
-                   {
-                      "type": "postback",
-                      "label": "食品營養資訊",
-                      "data":'stdQuestion^foodInfo',
-                    },              
-                   {
-                        "type": "postback",
-                        "label": "飲食方法或準則",
-                        "data":'stdQuestion^eatingMethod',
-                    },
-                   {
-                      "type": "postback",
-                      "label": "食譜推薦或料理方式",
-                      "data":'stdQuestion^resipeOffering',
-                    },
-                   {
-                      "type": "postback",
-                      "label": "運動及健康飲食",
-                      "data":'stdQuestion^exerciseAndMeal',
-                    },
-                   {
-                      "type": "postback",
-                      "label": "飲食建議或料理推薦",
-                      "data":'stdQuestion^mealSuggest',
-                    }
-               ]
+           contents={
+                  "type": "bubble",
+                  "size": "hecto",
+                  "body": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "text",
+                        "weight": "bold",
+                        "size": "xl",
+                        "text": "問題類別列表"
+                      },
+                      {
+                        "type": "box",
+                        "layout": "vertical",
+                        "contents": [
+                          {
+                            "type": "box",
+                            "layout": "baseline",
+                            "contents": [
+                              {
+                                "type": "text",
+                                "text": "請選擇要問的問題類別",
+                                "wrap": True,
+                                "size": "md"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "footer": {
+                    "type": "box",
+                    "layout": "vertical",
+                    "contents": [
+                      {
+                        "type": "button",
+                        "style": "link",
+                        "height": "sm",
+                        "action": {
+                          "type": "postback",
+                          "label": "食品營養資訊",
+                          "data":'stdQuestion^foodInfo'
+                        }
+                      },
+                      {
+                        "type": "button",
+                        "style": "link",
+                        "height": "sm",
+                        "action": {
+                          "type": "postback",
+                          "label": "飲食方法或準則",
+                          "data":'stdQuestion^eatingMethod'
+                        }
+                      },
+                      {
+                        "type": "button",
+                        "action": {
+                          "type": "postback",
+                          "label": "食譜推薦或料理方式",
+                          "data":'stdQuestion^resipeOffering'
+                        }
+                      },
+                      {
+                        "type": "button",
+                        "action": {
+                          "type": "postback",
+                          "label": "運動及健康飲食",
+                          "data":'stdQuestion^exerciseAndMeal'
+                        }
+                      },
+                      {
+                        "type": "button",
+                        "action": {
+                          "type": "postback",
+                          "label": "飲食建議或料理推薦",
+                          "data":'stdQuestion^mealSuggest'
+                        }
+                      }
+                    ],
+                    "spacing": "md"
+                  }
+                }
            )
-       )
     line_bot_api.reply_message(event.reply_token, message)
 
 def How2Use(event,user_id,line_bot_api):
