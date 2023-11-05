@@ -89,13 +89,12 @@ def eating_method_sugest(user_msg,user_id):
     return metaPrompt
 def resipeOffering(dish_name,user_id):
     metaPrompt=f'''
-    根據現有資料或是利用google_res function搜尋，提供{dish_name}的相關食譜或式料理方式
+    請提供{dish_name}的相關食譜或式料理方式
     請給予最多兩種建議。
     '''
     return metaPrompt
 def system_intro(user_msg):
-    return'你好!這是一個營養資訊系統!'
-
+    return'你好!這是一個營養資訊系統!\n本系統只會回覆您飲食及健康主題相關問題\n請勿輸入不相關的問題。謝謝。'
 def meal_sugest(user_msg,user_id):
     defaltInfo=db.view_user_info(user_id)
     
