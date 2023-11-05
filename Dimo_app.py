@@ -19,6 +19,7 @@ import rolltools_api_0717 as api
 import Dimo_RichMenu_function as Rmenu
 import Dimo_viewRecord as record
 import Dimo_OCR as ocr
+import Dimo_StdQuestionList as question
 import time
 import tempfile
 from datetime import datetime, timedelta
@@ -268,6 +269,17 @@ def handle_postback(event):
                 Rmenu.askingStandardQuestion(event, user_id, line_bot_api)
             elif value=='contect':
                 Rmenu.contect2Us(event, user_id, line_bot_api)
+        elif action=='stdQuestion':
+            if value=='exerciseAndMeal':
+                question.respond_exerciseAndMeal(event, user_id, line_bot_api)
+            elif value=='resipeOffering':
+                question.respond_resipeOffering(event, user_id, line_bot_api)
+            elif value=='mealSuggest':
+                question.respond_mealSuggest(event, user_id, line_bot_api)
+            elif value=='eatingMethod':
+                question.respond_eatingMethod(event, user_id, line_bot_api)
+            elif value=='foodInfo':
+                question.respond_foodInfo(event, user_id, line_bot_api)
         elif action=='viewRecord':
             if value=='today':
                 view_today_record(event,user_id)
