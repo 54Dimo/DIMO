@@ -169,7 +169,7 @@ func_table = [
                 "properties": {
                     "user_msg": {
                         "type": "string",
-                        "description": "使用者問題的重點或摘要",
+                        "description": "使用者的prompt",
                     }
                 },
                 "required": ["user_msg"],
