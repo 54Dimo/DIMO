@@ -223,7 +223,7 @@ func_table = [
         "func": excerciseAndmeal, # 函式
         "spec": {           # function calling 需要的函式規格
             "name": "excerciseAndmeal",
-            "description": "回覆「運動及健康飲食」此類型問題",
+            "description": "回覆「運動及健康飲食」此類型問題，可以包含運動方法建議，運動飲食搭配，或是健康飲食和運動對於健康的影響相關問題。",
             "parameters": {
                 "type": "object",
                 "properties": {
