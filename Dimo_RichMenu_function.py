@@ -87,7 +87,8 @@ def askingStandardQuestion(event,user_id,line_bot_api):
                         "action": {
                           "type": "postback",
                           "label": "食品營養資訊",
-                          "data":'stdQuestion^foodInfo'
+                          "data":'stdQuestion^foodInfo',
+                          'inputOption':'closeRichMenu'
                         }
                       },
                       {
@@ -97,7 +98,8 @@ def askingStandardQuestion(event,user_id,line_bot_api):
                         "action": {
                           "type": "postback",
                           "label": "飲食方法或準則",
-                          "data":'stdQuestion^eatingMethod'
+                          "data":'stdQuestion^eatingMethod',
+                          'inputOption':'closeRichMenu'
                         }
                       },
                       {
@@ -105,7 +107,8 @@ def askingStandardQuestion(event,user_id,line_bot_api):
                         "action": {
                           "type": "postback",
                           "label": "食譜推薦或料理方式",
-                          "data":'stdQuestion^resipeOffering'
+                          "data":'stdQuestion^resipeOffering',
+                          'inputOption':'closeRichMenu'
                         }
                       },
                       {
@@ -113,7 +116,8 @@ def askingStandardQuestion(event,user_id,line_bot_api):
                         "action": {
                           "type": "postback",
                           "label": "運動及健康飲食",
-                          "data":'stdQuestion^exerciseAndMeal'
+                          "data":'stdQuestion^exerciseAndMeal',
+                          'inputOption':'closeRichMenu'
                         }
                       },
                       {
@@ -121,7 +125,8 @@ def askingStandardQuestion(event,user_id,line_bot_api):
                         "action": {
                           "type": "postback",
                           "label": "飲食建議或料理推薦",
-                          "data":'stdQuestion^mealSuggest'
+                          "data":'stdQuestion^mealSuggest',
+                          'inputOption':'closeRichMenu'
                         }
                       }
                     ],
