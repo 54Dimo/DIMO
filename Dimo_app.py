@@ -264,7 +264,7 @@ def handle_postback(event):
                 alert(event,user_id)
             elif value=='selfInfo':
                 viewOrUpdateUserInfo(event,user_id)
-	    elif value=='QA':
+            elif value=='QA':
                 Rmenu.askingStandardQuestion(event, user_id, line_bot_api)
             elif value=='contect':
                 Rmenu.contect2Us(event, user_id, line_bot_api)
