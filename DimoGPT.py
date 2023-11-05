@@ -389,7 +389,7 @@ def UsingChat(user_id,hist,user_msg):
     
     # sys_msg = '你是一位語意辨識人員，請根據主題列表判斷問題類別，並根據判斷之類別選擇回覆方式。\n主題列表:[向使用者打招呼或進行系統簡介、食品營養資訊、飲食方法或準則、食譜推薦或料理方式、運動及健康飲食]\n若使用者之問題與可回覆之類別皆不相關，請回答:「此問題與本系統無關，無法回應。」'
     sys_msg = '請執行語意判斷工作，針對使用者提出的語句，根據主題列表判斷問題類別並選擇相對應的回覆方式。\n若無法選擇相關的function進行回覆，請回答:「此問題與本系統無關，無法回應。」\n主題列表:[向使用者打招呼或進行系統簡介、食品營養資訊、飲食方法或準則、食譜推薦或料理方式、運動及健康飲食]。'
-    prompt=f'argument:user_id={user_id};main question:'
+    prompt=f'argument:user_id={user_id}\nmain question:'
     prompt+=user_msg
     for reply in chat_f(hist,sys_msg, prompt, stream=False):
             
