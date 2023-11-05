@@ -258,7 +258,14 @@ def bubble_creat(num):
     
 def How2Use(event,user_id,line_bot_api):
     message = TextSendMessage(
-                text = '尚未建置'
+                text = '''系統操作：
+1. 想查食物營養資訊？點擊「查詢/紀錄」，你可以選擇查詢、拍照或手動輸入。
+2. 想看飲食紀錄？點擊「紀錄維護」，你可以查看指定日期的飲食紀錄。
+
+常見問題：
+1. 想修改個人資料？點擊「個人資料維護」。
+2. 有飲食或健康的問題？點擊「常見問題」，你可以找到相關資訊。
+3. 需要操作指引或聯絡我們？點擊「聯絡我們」。'''
         )
     line_bot_api.reply_message(event.reply_token,message)
 
