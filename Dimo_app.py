@@ -271,6 +271,7 @@ def handle_postback(event):
                 Rmenu.contect2Us(event, user_id, line_bot_api)
         elif action=='stdQuestion':
             if value=='exerciseAndMeal':
+		print('res-exercise')
                 question.respond_exerciseAndMeal(event, user_id, line_bot_api)
             elif value=='resipeOffering':
                 question.respond_resipeOffering(event, user_id, line_bot_api)
