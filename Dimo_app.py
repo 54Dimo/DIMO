@@ -271,14 +271,19 @@ def handle_postback(event):
                 Rmenu.contect2Us(event, user_id, line_bot_api)
         elif action=='stdQuestion':
             if value=='exerciseAndMeal':
+                chatMode[user_id]={'mode':'chat','data':hist}
                 question.respond_exerciseAndMeal(event, user_id, line_bot_api)
             elif value=='resipeOffering':
+                chatMode[user_id]={'mode':'chat','data':hist}
                 question.respond_resipeOffering(event, user_id, line_bot_api)
             elif value=='mealSuggest':
+                chatMode[user_id]={'mode':'chat','data':hist}
                 question.respond_mealSuggest(event, user_id, line_bot_api)
             elif value=='eatingMethod':
+                chatMode[user_id]={'mode':'chat','data':hist}
                 question.respond_eatingMethod(event, user_id, line_bot_api)
             elif value=='foodInfo':
+                chatMode[user_id]={'mode':'chat','data':hist}
                 question.respond_foodInfo(event, user_id, line_bot_api)
         elif action=='viewRecord':
             if value=='today':
