@@ -303,6 +303,10 @@ def handle_postback(event):
             elif value=='cancle':
                 if user_id in filling_imgInfo:
                     filling_imgInfo.pop(user_id)
+                message = TextSendMessage(
+                            text = '已取消'
+                    )
+                line_bot_api.reply_message(event.reply_token,message)
             elif value=='reinput':
                 message = TextSendMessage(
                             text = '請重新輸入要紀錄的份量數:'
