@@ -326,23 +326,12 @@ def handle_postback(event):
                             text = "請輸入食物名稱",
                             quick_reply=(QuickReply(
                             items=[
-                                {
-                                      "type": "action",
-                                      "action": {
-                                        "type": "postback",
-                                        "label": "開始輸入",
-                                        'data':"record^name",
-                                        'inputOption':'openKeyboard',
-                                        'fillInText':'名稱:'
-                                      }
-                                    },
                                     {
                                       "type": "action",
                                       "action": {
                                         "type": "postback",
                                         "label": "取消",
                                         'data':"record^cancle",
-                                        'text':'取消輸入',
                                       }
                                     }
                                 ]
@@ -533,7 +522,9 @@ def showImgResult(event,user_id,result):
                         "type":"postback",
                         "label": "加到我的紀錄",
                         "data": "record^imgData;"+str(result),
-                        "text":"添加到我的紀錄"
+                        "text":"添加到我的紀錄",
+                        'inputOption':'openKeyboard',
+                        'fillInText':'名稱:'
                         }
                       }
                     ]
