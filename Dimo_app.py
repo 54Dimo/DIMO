@@ -396,7 +396,7 @@ def recordImgData(event,user_id,data):
                     quick_reply=(QuickReply(
                     items=[
                         QuickReplyButton(
-                        action=PostbackAction(label="取消輸入",data=f'CancleRecord^{user_id}')
+                        action=PostbackAction(label="取消輸入",data=f'record^cancle')
                                     )
                         ]
                     )
