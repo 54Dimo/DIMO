@@ -139,7 +139,7 @@ def handle_image_message(event):
     # try:
         # 取得圖片訊息中的圖片 ID
     message_id = event.message.id
-    
+    chatMode[user_id]={'mode':'systemUse','data':None}
     # 获取用户发送的图像消息
     message_content = line_bot_api.get_message_content(message_id)
     image_data = message_content.content
@@ -256,18 +256,25 @@ def handle_postback(event):
             recordON(event, foodid, quantity, user_id)
         elif action=='richMenu':
             if value=='search':
+                chatMode[user_id]={'mode':'systemUse','data':None}
                 Rmenu.SearchFunction(event,user_id,line_bot_api,liffid_food)
             elif value=='document' : 
+                chatMode[user_id]={'mode':'systemUse','data':None}
                 Rmenu.How2Use(event,user_id,line_bot_api)
             elif value=='record' :
+                chatMode[user_id]={'mode':'systemUse','data':None}
                 Rmenu.RecordFunction(event,user_id,line_bot_api)
             elif value=='txtSearch':
+                chatMode[user_id]={'mode':'systemUse','data':None}
                 alert(event,user_id)
             elif value=='selfInfo':
+                chatMode[user_id]={'mode':'chat','data':hist}
                 viewOrUpdateUserInfo(event,user_id)
             elif value=='QA':
+                chatMode[user_id]={'mode':'chat','data':hist}
                 Rmenu.askingStandardQuestion(event, user_id, line_bot_api)
             elif value=='contect':
+                chatMode[user_id]={'mode':'chat','data':hist}
                 Rmenu.contect2Us(event, user_id, line_bot_api)
         elif action=='stdQuestion':
             if value=='exerciseAndMeal':
