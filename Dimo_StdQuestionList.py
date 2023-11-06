@@ -254,8 +254,8 @@ def respond_mealSuggest(event,user_id,line_bot_api):
                         "type": "button",
                         "action": {
                           "type": "message",
-                          "label": "運動前後的飲食?",
-                          "text":'當我在運動前後，可以吃些什麼?'
+                          "label": "增加代謝?",
+                          "text":'我想要增加我的代謝能力，可以吃些什麼?'
                         }
                       },
                       {
@@ -445,7 +445,7 @@ def respond_foodInfo(event,user_id,line_bot_api):
                         "action": {
                           "type": "message",
                           "label": "補充蛋白質?",
-                          "text":'請列舉一些含有豐富蛋白質影養素的食物。'
+                          "text":'請列舉一些含有豐富蛋白質營養素的食物。'
                         }
                       },
                       {
