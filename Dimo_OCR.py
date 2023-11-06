@@ -136,7 +136,7 @@ def upload_image_to_github(image_content, img_id):
 def trans2dict(exText):
     try:
         text=exText
-        print(text)
+        #print(text)
         food_info={}
     
         list_text=text.split('\n')
@@ -158,7 +158,7 @@ def trans2dict(exText):
                 list_text.pop(index_1)
                 list_text.pop(index_2-1)
         else:
-            print("格式不正確")
+            #print("格式不正確")
             return 'non support'
             
         index_per_serving = list_text.index('每份')
@@ -175,7 +175,7 @@ def trans2dict(exText):
         food_info['脂肪']=fat_value
         food_info['碳水化合物']=carb_value
     
-        print(food_info)
+        #print(food_info)
         return food_info
     except ValueError:
         return 'non support'
