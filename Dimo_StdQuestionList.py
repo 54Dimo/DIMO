@@ -96,7 +96,7 @@ def respond_exerciseAndMeal(event,user_id,line_bot_api):
                   }
                 }
             )
-
+    line_bot_api.reply_message(event.reply_token, message)
     
 def respond_resipeOffering(event,user_id,line_bot_api):
     message = FlexSendMessage(
