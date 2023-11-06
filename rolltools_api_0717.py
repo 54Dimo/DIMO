@@ -116,7 +116,7 @@ def query(appid,secret,food_id,unit,picON):
     image_content=download_images_with_beautifulsoup(1, name)
     time.sleep(1) #訪問間隔
     calory = data["data"]["calory"]
-    calory_unit = data["data"]["caloryUnit"]
+    calory_unit = '大卡'
     protein = data["data"]["protein"]
     protein_unit = data["data"]["proteinUnit"]
     fat = data["data"]["fat"]
