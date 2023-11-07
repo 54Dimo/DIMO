@@ -89,7 +89,7 @@ def eating_method_sugest(user_msg,user_id):
     return metaPrompt
 def resipeOffering(dish_name,user_id):
     metaPrompt=f'''
-    請提供{dish_name}的相關食譜或式料理方式
+    請根據現有資料，或是利用google_res function，提供{dish_name}的相關食譜或式料理方式。
     請給予最多兩種建議。
     '''
     return metaPrompt
