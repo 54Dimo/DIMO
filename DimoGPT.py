@@ -123,24 +123,6 @@ def meal_sugest(user_msg,user_id):
         請根據針對以上個人資訊，綜合分析飲食狀況及欲達成之目標，給予1~3個相關的餐食推薦，以回答以下問題:'''
     return metaPrompt
 func_table = [
-     {                       # 每個元素代表一個函式
-        "chain": False,      # 函式執行結果是否要再傳回給 API
-        "func": cannotRes, # 函式
-        "spec": {           # function calling 需要的函式規格
-            "name": "cannotRes",
-            "description": "若使用者的問題並不屬於「向使用者打招呼或進行系統簡介、食品營養資訊、飲食方法或準則、食譜推薦或料理方式、運動及健康飲食」，請利用此function回覆。",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "user_msg": {
-                        "type": "string",
-                        "description": "使用者的prompt",
-                    }
-                },
-                "required": ["user_msg"],
-            },
-        }
-    },
     {                       # 每個元素代表一個函式
         "chain": True,      # 函式執行結果是否要再傳回給 API
         "func": google_res, # 函式
