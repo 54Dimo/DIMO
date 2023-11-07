@@ -304,7 +304,7 @@ def get_func_call(messages, stream=False, func_table=None,
     funcs = {}
     if func_table:
         funcs = {'functions':[f['spec'] for f in func_table]}
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model = model,
         messages = messages,
         stream = stream,
