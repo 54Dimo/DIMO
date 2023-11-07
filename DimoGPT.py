@@ -90,7 +90,8 @@ def eating_method_sugest(user_msg,user_id):
 def resipeOffering(dish_name,user_id):
     metaPrompt=f'''
     請根據現有資料，或是利用google_res function，提供{dish_name}的相關食譜或式料理方式。
-    若是採用搜尋方式，請整理後回覆完整資訊，並且不要附上連結。
+    若是採用搜尋方式，請整理後回覆完整食譜(作法)，並且不要附上連結。
+    若找不到資料，請委婉回應。
     請給予最多兩種建議。
     '''
     return metaPrompt
