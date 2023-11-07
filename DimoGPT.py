@@ -299,7 +299,7 @@ def call_func(func_call):
 # 從 API 傳回內容找出 function_calling 內容
 def get_func_call(messages, stream=False, func_table=None,
                   **kwargs):
-    model = 'gpt-3.5-turbo'
+    model = 'gpt-3.5-turbo-1106'
     if 'model' in kwargs: model = kwargs['model']
     funcs = {}
     if func_table:
