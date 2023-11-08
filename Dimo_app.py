@@ -292,11 +292,27 @@ def handle_postback(event):
             elif value=='foodInfo':
                 chatMode[user_id]={'mode':'chat','data':hist}
                 question.respond_foodInfo(event, user_id, line_bot_api)
-        elif action=='contect2Us':
-            message = TextSendMessage(
-                        text = '聯絡我們!'
-                )
-            line_bot_api.reply_message(event.reply_token,message)
+        elif action=='contect':
+            if value=='contect2Us':
+                message = TextSendMessage(
+                            text = '聯絡我們!'
+                    )
+                line_bot_api.reply_message(event.reply_token,message)
+            elif value=='Q1':
+                message = TextSendMessage(
+                            text = '想要查看或修改紀錄，\n請先點擊「系統操作」選單頁籤\n接著在右下角，點擊「紀錄維護」\n\n隨後會出現兩個功能選單:\n「觀看今天紀錄」、「選擇日期觀看紀錄」點擊後即會顯示該日期的紀錄資料，即可點選「修改」進行份量更改。'
+                    )
+                line_bot_api.reply_message(event.reply_token,message)
+            elif value=='Q2':
+                message = TextSendMessage(
+                            text = '想要查看或修改個人資料，\n請先點擊「常見問題」選單頁籤\n接著在右上角，點擊「個人資料維護」\n隨後會出現一個功能選單:\n點擊「個人資料」按鈕後，即會開啟網頁，可以在此網頁表單上看到先前填寫的資料，也可以直接進行更正。\n更正完後不要忘了點即確認送出，送出後即會完成修改。'
+                    )
+                line_bot_api.reply_message(event.reply_token,message)
+            elif value=='Q3':
+                message = TextSendMessage(
+                            text = '您好，本系統在查詢後所顯示的營養素及熱量單位，都是以每種食物的「每100公克」為份量單位顯示。'
+                    )
+                line_bot_api.reply_message(event.reply_token,message)
         elif action=='viewRecord':
             if value=='today':
                 view_today_record(event,user_id)
