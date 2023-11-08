@@ -144,24 +144,24 @@ def contect2Us(event,user_id,line_bot_api):
                text='請選擇要使用的功能：',  #副標題
                actions=[
                    {
-                      "type": "message",
+                      "type": "postback",
                       "label": "如何修改紀錄內容?",
-                      "text": "想要查看或修改紀錄，\n請先點擊「系統操作」選單頁籤\n接著在右下角，點擊「紀錄維護」\n\n隨後會出現兩個功能選單:\n「觀看今天紀錄」、「選擇日期觀看紀錄」點擊後即會顯示該日期的紀錄資料，即可點選「修改」進行份量更改。"
+                      "data": "contect^Q1"
                     },              
                    {
-                        "type": "message",
+                        "type": "postback",
                         "label": "身高、體重該從哪裡變更?",
-                        "text": "想要查看或修改個人資料，\n請先點擊「常見問題」選單頁籤\n接著在右上角，點擊「個人資料維護」\n隨後會出現一個功能選單:\n點擊「個人資料」按鈕後，即會開啟網頁，可以在此網頁表單上看到先前填寫的資料，也可以直接進行更正。\n更正完後不要忘了點即確認送出，送出後即會完成修改。"
+                        "data": "contect^Q2"
                     },
                    {
-                      "type": "message",
+                      "type": "postback",
                       "label": "系統所顯示的食物份量單位基準?",
-                      "text": "您好，本系統在查詢後所顯示的營養素及熱量單位，都是以每種食物的「每100公克」為份量單位顯示。"
+                      "data": "contect^Q3"
                     },
                    {
                       "type": "postback",
                       "label": "聯絡我們",
-                      "data":'contect2Us'
+                      "data":'contect^contect2Us'
                     }
                ]
            )
