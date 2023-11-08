@@ -21,7 +21,7 @@ def item_create(index,block,data):
                     "text": f"{data[index][4]}",
                     "weight": "bold",
                     "size": "sm",
-                    "wrap": true,
+                    "wrap": True,
                     "flex": 7
                   },
                   {
