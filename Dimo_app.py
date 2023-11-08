@@ -292,6 +292,11 @@ def handle_postback(event):
             elif value=='foodInfo':
                 chatMode[user_id]={'mode':'chat','data':hist}
                 question.respond_foodInfo(event, user_id, line_bot_api)
+        elif action=='contect2Us':
+            message = TextSendMessage(
+                        text = '聯絡我們!'
+                )
+            line_bot_api.reply_message(event.reply_token,message)
         elif action=='viewRecord':
             if value=='today':
                 view_today_record(event,user_id)
