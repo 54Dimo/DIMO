@@ -61,12 +61,12 @@ def item_create(index,block,data):
                           },
                           {
                             "type": "text",
-                            "text": f"{(data[index][6]*data[index][10])}大卡",
+                            "text": f"{round(data[index][6]*data[index][10],1)}大卡",
                             "size": "xxs",
                             "align": "start",
                             "gravity": "bottom",
                             "offsetTop": "xs",
-                            "flex": 3
+                            "flex": 4
                           }
                         ]
                       },
@@ -101,12 +101,12 @@ def item_create(index,block,data):
                           },
                           {
                             "type": "text",
-                            "text": f"{(data[index][7]*data[index][10])}公克",
+                            "text": f"{round(data[index][7]*data[index][10],1)}公克",
                             "size": "xxs",
                             "align": "start",
                             "gravity": "bottom",
                             "offsetTop": "xs",
-                            "flex": 3
+                            "flex": 4
                           }
                         ]
                       },
@@ -141,12 +141,12 @@ def item_create(index,block,data):
                           },
                           {
                             "type": "text",
-                            "text": f"{(data[index][8]*data[index][10])}公克",
+                            "text": f"{round(data[index][8]*data[index][10],1)}公克",
                             "size": "xxs",
                             "align": "start",
                             "gravity": "bottom",
                             "offsetTop": "xs",
-                            "flex": 3
+                            "flex": 4
                           }
                         ]
                       },
@@ -181,12 +181,12 @@ def item_create(index,block,data):
                           },
                           {
                             "type": "text",
-                            "text": f"{(data[index][9]*data[index][10])}公克",
+                            "text": f"{round(data[index][9]*data[index][10],1)}公克",
                             "size": "xxs",
                             "align": "start",
                             "gravity": "bottom",
                             "offsetTop": "xs",
-                            "flex": 3
+                            "flex": 4
                           }
                         ]
                       },
