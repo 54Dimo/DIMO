@@ -79,7 +79,7 @@ def item_create(index,block,data):
                           }
                         ],
                         "height": "6px",
-    					"width": f"{(data[index][6]*data[index][10])/5}%",
+    					"width": f"{(data[index][6]*data[index][10])/10}%",
                         "backgroundColor": "#4b77a8"
                       }
                     ],
