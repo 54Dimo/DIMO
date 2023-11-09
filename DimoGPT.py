@@ -109,17 +109,19 @@ def meal_sugest(user_msg,user_id):
     mealList=db.queryfromDB('today', user_id)
     food_had_eat=[]
     if len(mealList)==0 or mealList=='noTable':
-        metaPrompt=f''' 我是一位{user_info.get('gender')}、身高:{user_info.get('height')}公分、體重:{user_info.get('weight')}公斤
+        metaPrompt=f''' 請根據下列個人資訊，綜合分析飲食狀況及欲達成之目標，給予1~3個相關的回應。
+        我是一位{user_info.get('gender')}、身高:{user_info.get('height')}公分、體重:{user_info.get('weight')}公斤
         平時從事{user_info.get('exerciseIntensity')}運動，想要達成{user_info.get('fitnessGoal')}的體態目標。
         飲食狀況:今天還沒有吃過任何東西。
-        請根據針對以上個人資訊，綜合分析飲食狀況及欲達成之目標，給予1~3個相關的餐食推薦，以回答以下問題:'''
+        '''
     else:
         for i in range(len(mealList)):
             food_had_eat.append(mealList[i][4])
-        metaPrompt=f''' 我是一位{user_info.get('gender')}、身高:{user_info.get('height')}公分、體重:{user_info.get('weight')}公斤
+        metaPrompt=f''' 請根據下列個人資訊，綜合分析飲食狀況及欲達成之目標，給予1~3個相關的回應。
+        我是一位{user_info.get('gender')}、身高:{user_info.get('height')}公分、體重:{user_info.get('weight')}公斤
         平時從事{user_info.get('exerciseIntensity')}運動，想要達成{user_info.get('fitnessGoal')}的體態目標。
         飲食狀況:今天已經吃了{food_had_eat}這些東西。
-        請根據針對以上個人資訊，綜合分析飲食狀況及欲達成之目標，給予1~3個相關的餐食推薦，以回答以下問題:'''
+        '''
     return metaPrompt
 func_table = [
     {                       # 每個元素代表一個函式
@@ -378,7 +380,3 @@ def UsingChat(user_id,hist,user_msg):
     for reply in chat_f(hist,sys_msg, prompt, stream=False):
             
             return reply
-            
-if __name__=='__main__':
-    reply=UsingChat('Ub5136c58845e8760da3979c36d8dbb5b',[], '晚餐吃什麼?')
-    print(reply)
