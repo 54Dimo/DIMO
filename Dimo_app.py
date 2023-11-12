@@ -13,6 +13,7 @@ import os
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import PostbackAction,ImageMessage,QuickReplyButton,MessageAction,QuickReply, MessageEvent, TextMessage, PostbackEvent, TextSendMessage, TemplateSendMessage, ConfirmTemplate, MessageTemplateAction, ButtonsTemplate, PostbackTemplateAction, URITemplateAction, CarouselTemplate, CarouselColumn, ImageCarouselTemplate, ImageCarouselColumn, FlexSendMessage,URIAction
+from linebot.models import ImagemapSendMessage, BaseSize, URIImagemapAction, ImagemapArea
 import DB_Control as db
 import Dimo_SearchFunction as Dimo_search
 import rolltools_api_0717 as api
@@ -294,10 +295,7 @@ def handle_postback(event):
                 question.respond_foodInfo(event, user_id, line_bot_api)
         elif action=='contect':
             if value=='contect2Us':
-                message = TextSendMessage(
-                            text = '聯絡我們!'
-                    )
-                line_bot_api.reply_message(event.reply_token,message)
+                sendContect(event)
             elif value=='Q1':
                 message = TextSendMessage(
                             text = '想要查看或修改紀錄，\n請先點擊「系統操作」選單頁籤\n接著在右下角，點擊「紀錄維護」\n\n隨後會出現兩個功能選單:\n「觀看今天紀錄」、「選擇日期觀看紀錄」點擊後即會顯示該日期的紀錄資料，即可點選「修改」進行份量更改。'
@@ -564,7 +562,47 @@ def showImgResult(event,user_id,result):
                 }
             )
     line_bot_api.reply_message(event.reply_token,message)
-    
+
+def sendContect(event):  #圖片地圖
+    image_url = 'https://i.imgur.com/VswWdHs.png'  #圖片位址
+    imgwidth = 800  #原始圖片寛度一定要1040
+    imgheight = 800
+    message = ImagemapSendMessage(
+        base_url=image_url,
+        alt_text="聯絡我們!",
+        base_size=BaseSize(height=imgheight, width=imgwidth),  #圖片寬及高
+        actions=[
+            URIImagemapAction(  #開啟網頁
+                link_uri='https://www.instagram.com/dr._.dimo',
+                area=ImagemapArea(  
+                    x=80, 
+                    y=425, 
+                    width=645, 
+                    height=100  
+                )
+            ),
+            URIImagemapAction( 
+                link_uri='tel:0222368225',
+                area=ImagemapArea(  
+                    x=80, 
+                    y=525, 
+                    width=645, 
+                    height=105  
+                )
+            ),
+            URIImagemapAction(  #開啟網頁
+                link_uri='mailto:54dr.dimo@gmail.com',
+                area=ImagemapArea(  
+                    x=80, 
+                    y=630, 
+                    width=645, 
+                    height=110  
+                )
+            ),
+        ]
+    )
+    line_bot_api.reply_message(event.reply_token, message)
+
 def loading2GPT(event,prompt,user_id):
     reply=chat.UsingChat(user_id, chatMode[user_id].get('data'),prompt)
     message = TextSendMessage(
