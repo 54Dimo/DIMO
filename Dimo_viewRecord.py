@@ -13,11 +13,11 @@ def item_create(index,block,data):
     carb=(data[index][9]*data[index][10])/2
     if (colory>=100):
         colory=100
-    elif(protein>=100):
+    if(protein>=100):
         protein=100
-    elif(fat>=100):
+    if(fat>=100):
         fat=100
-    elif(carb>=100):
+    if(carb>=100):
         carb=100
     item={
             block: {
