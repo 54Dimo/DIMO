@@ -7,6 +7,18 @@ Created on Tue Oct 10 04:21:26 2023
 import DB_Control as db
 
 def item_create(index,block,data):
+    colory=(data[index][6]*data[index][10])/8
+    protein=(data[index][7]*data[index][10])/2
+    fat=(data[index][8]*data[index][10])/2
+    carb=(data[index][9]*data[index][10])/2
+    if (colory>=800):
+        colory=100
+    elif(protein>=200):
+        protein=100
+    elif(fat>=200):
+        fat=100
+    elif(carb>=200):
+        carb=100
     item={
             block: {
             "type": "box",
@@ -79,7 +91,7 @@ def item_create(index,block,data):
                           }
                         ],
                         "height": "6px",
-    					"width": f"{(data[index][6]*data[index][10])/8}%",
+    					"width": f"{colory}%",
                         "backgroundColor": "#4b77a8"
                       }
                     ],
@@ -119,7 +131,7 @@ def item_create(index,block,data):
                           }
                         ],
                         "height": "6px",
-    					"width": f"{(data[index][7]*data[index][10])/2}%",
+    					"width": f"{protein}%",
                         "backgroundColor": "#4aa04a"
                       }
                     ],
@@ -159,7 +171,7 @@ def item_create(index,block,data):
                           }
                         ],
                         "height": "6px",
-    					"width": f"{(data[index][8]*data[index][10])/2}%",
+    					"width": f"{fat}%",
                         "backgroundColor": "#cf5954"
                       }
                     ],
@@ -199,7 +211,7 @@ def item_create(index,block,data):
                           }
                         ],
                         "height": "6px",
-    					"width": f"{(data[index][9]*data[index][10])/2}%",
+    					"width": f"{carb}%",
                         "backgroundColor": "#e59d32"
                       }
                     ],
