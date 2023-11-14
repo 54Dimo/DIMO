@@ -105,23 +105,11 @@ def handle_message(event):
         elif mtext in keyWordList :
             None
         elif user_id not in chatMode:
-            message = TextSendMessage(
-	            text = '關鍵字搜尋中...'
-                )
-            line_bot_api.reply_message(event.reply_token,message)
             Dimo_search.searching(event, mtext, user_id)
         elif user_id in chatMode: 
             if chatMode[user_id].get('mode')=='systemUse':
-                message = TextSendMessage(
-                            text = '關鍵字搜尋中...'
-                    )
-                line_bot_api.reply_message(event.reply_token,message)
                 Dimo_search.searching(event, mtext, user_id)
             elif chatMode[user_id].get('mode')=='chat':
-                message = TextSendMessage(
-                            text = '智能訊息生成中，請稍待...\n若30秒內無回應，請再試一次。'
-                    )
-                line_bot_api.reply_message(event.reply_token,message)
                 loading2GPT(event,mtext,user_id)
                 
         else:
